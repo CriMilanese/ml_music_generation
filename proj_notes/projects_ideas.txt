@@ -1,0 +1,10 @@
+
+	game based project
+		teach the machine learning algorithm to play backgammon
+	music project
+		select songs and guess their genre
+	kaggle competition
+		pick a project from the website
+	implementing from scratch
+		using numpy, implement diff machine learning techniques and
+		compare their result
