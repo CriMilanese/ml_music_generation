@@ -6,13 +6,13 @@ this repo is meant to contain all files for the project of machine learning, cou
 ## suggestion for the project
 
 ### game based project
-#### teach the machine learning algorithm to play backgammon
+ teach the machine learning algorithm to play backgammon
 ### music project
-#### select songs and guess their genre
+ select songs and guess their genre
 ### kaggle competition
-#### pick a project from the website
+ pick a project from the website
 ### implementing from scratch
-#### using numpy, implement diff machine learning techniques and compare their result
+ using numpy, implement diff machine learning techniques and compare their result
 ### art project
-#### classification or generation of art? art pieces contains info about the painting itself such as 
+ classification or generation of art? art pieces contains info about the painting itself such as 
 		
