@@ -24,7 +24,7 @@ Pros:
 
 Cons:
 - Some differences in formatting between files, weird nuanced occurances such as that of "N" or the presence of 2 chords within a single bar. Can cause complications in parsing.
-	-> As a result of difficulty parsing, manual parsing may be needed. In this case, if the 	data fails to work in the given context it could be very frustrating (not to mention a 		waste of time)
+	-> As a result of difficulty parsing, manual parsing may be needed. In this case, if the data fails to work in the given context it could be very frustrating (not to mention a waste of time)
 - No genre tagging
 - Mixed time signatures
 - Music theory/notation needs to be learned in order to better understand how to create a parser, since the formatting of chords seems to be created for people with a firm grasp on music to understand.
