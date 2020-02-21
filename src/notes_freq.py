@@ -1,9 +1,7 @@
 # this module shows an implementation for importing
 # pickle files into a variable
 
-import re
-import numpy
-from loadPickle import loadPk
+from managePickles import loadPk
 
 my_list = loadPk("note2freq.pickle")
 

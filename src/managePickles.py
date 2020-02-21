@@ -4,7 +4,7 @@
 ###############################################################
 # to make use of this tool simply use the import in your script
 # make sure to be in the 'src' directory
-# from loadPickle import loadPk
+# from managePickles import loadPk
 ###############################################################
 
 import pickle
