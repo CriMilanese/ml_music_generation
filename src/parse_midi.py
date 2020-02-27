@@ -2,49 +2,49 @@
     # parse MIDI file
 
 from MIDI import MIDIFile
-import re
-
+from re import findall
+from sys import argv
 
 def parse(file):
     c=MIDIFile(file)
     c.parse()
-    for idx, track in enumerate(c):
+    p = []
+    for track in c:
         track.parse()
-        print(f'Track {idx}:')
-        p = re.findall('NOTE_ON\[[0-9]\] [A-Z][0-9] ON',str(track))
-
+        p = findall('NOTE_ON\[[0-9]\] [A-Z][0-9] ON',str(track))
+        del track
     notes = []
-    for indx, g in enumerate(p):
+    for g in p:
         g = g[-5]+g[-4]
         notes.append(g)
-
-    inner_list = []
+    del p
     my_dict = {}
     for indx, n in enumerate(notes):
-        if n != notes[-1]:
+        if indx+1 < len(notes):
             # add each new note to the list and append
             # the following note to the followers list
-            if n not in my_dict:
-                my_dict[n] = inner_list
+            if n not in my_dict.keys():
+                my_dict[n] = []
                 my_dict[n].append((notes[indx+1], 1))
                 continue
             contained = False
-            counter = 0
-            for nt, occ in my_dict[n]:
+            # counter = 0
+            for ind, (nt, occ) in enumerate(my_dict[n]):
                 # if follower note is present, add occurrance
                 if notes[indx+1] == nt:
                     contained = True
-                    my_dict[n][counter] = (notes[indx+1], occ+1)
-                counter += 1
-            del counter
+                    my_dict[n][ind] = (notes[indx+1], occ+1)
+                # counter += 1
+            # del counter
             if not contained:
                 # for each follower note, add if not present
-                 my_dict[n].append((notes[indx+1], 1))
+                my_dict[n].append((notes[indx+1], 1))
 
     # for note in my_dict:
     #     print(note + ': ')
     #     for foll in my_dict[note]:
     #         print('\t' + foll[0] + ' appears: ' + str(foll[1]) + ' times')
     del notes
-    del inner_list
     return my_dict
+
+# parse(argv[1])

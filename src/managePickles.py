@@ -10,10 +10,14 @@
 import pickle
 
 def loadPk(filename):
-    with open('pickles/' + filename, 'rb') as handle:
+    my_list = ''
+    with open('pickles/{}'.format(filename), 'rb') as handle:
         my_list = pickle.load(handle)
-        return my_list
+    handle.close()
+    return my_list
 
 def savePk(data, filename):
-    with open('pickles/'+filename+'.pickle', 'wb') as handle:
+    with open('{}.pickle'.format(filename), 'wb') as handle:
         pickle.dump(data, handle, protocol=pickle.HIGHEST_PROTOCOL)
+    del data
+    handle.close()
