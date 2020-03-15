@@ -7,6 +7,7 @@ from sys import argv
 from mido import MidiFile
 from mido import Message,MetaMessage
 import numpy as np
+from markov_chain import n_grams_frequency
 
 def check(file):
     mid = MidiFile(file)
@@ -48,7 +49,7 @@ def parse(file, key):
             if msg.type == 'note_on':
                 notes.append(msg.note)
         del track
-
+    n_grams_frequency(notes)
     if(key == 'E major'):
         notes = normalise("E", notes)
     if(key == 'F major'):
