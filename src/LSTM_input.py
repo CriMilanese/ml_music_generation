@@ -1,3 +1,4 @@
+
 from re import findall
 from sys import argv
 from mido import MidiFile
@@ -15,18 +16,16 @@ from keras.callbacks import ModelCheckpoint
 from os import listdir, chdir, getcwd, mkdir
 
 
-
-
 def init_array(num_notes):
-    chdir('Data')
+    #chdir('Data')
     notes = []
-    for dirs in listdir():
-        if dirs == 'G major':
-            chdir(dirs)
-            for fl in listdir():
+    for dirs in listdir('Data'):
+        print(dirs)
+        if dirs == 'C major':
+            for fl in listdir('Data/'+ dirs):
                 print(fl)
                 print(dirs)
-                mid=MidiFile(fl)
+                mid=MidiFile('Data/'+dirs+'/'+fl)
                 for track in mid.tracks:
                     for msg in track:
                         if msg.type == 'note_on':
@@ -58,6 +57,7 @@ def generate_sequences(note_array, seq_size, num_notes):
 def init_lstm_model(LSTM_in, num_notes):
     print('init lstsm model ------------------------------------------------')
     """ create the structure of the neural network """
+
     model = Sequential()
     model.add(LSTM(
         512,
@@ -82,8 +82,9 @@ def init_lstm_model(LSTM_in, num_notes):
 
 def train(model, LSTM_in, LSTM_out):
     """ train the neural network """
-    chdir(r'C:\Users\gregh\Desktop\ML_project-master\src\weights')
-    filepath = "weights-improvement-{epoch:02d}-{loss:.4f}-bigger.hdf5"
+
+
+    filepath = "weights/weights-improvement-{epoch:02d}-{loss:.4f}-bigger.hdf5"
     checkpoint = ModelCheckpoint(
         filepath,
         monitor='loss',
@@ -94,7 +95,7 @@ def train(model, LSTM_in, LSTM_out):
     callbacks_list = [checkpoint]
 
     model.fit(LSTM_in, LSTM_out, epochs=100, batch_size=128, callbacks=callbacks_list)
-    model.save(r'C:Users\gregh\Desktop\ML_project-master\src\model\lstm_e100_s100.h5')
+    model.save('/model/lstm_e100_s100.h5')
 
 
 
@@ -108,3 +109,4 @@ def train_model():
     train(init_lstm_model(network_in, num_notes), network_in, network_out)
 
 train_model()
+
