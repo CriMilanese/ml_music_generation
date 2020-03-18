@@ -35,8 +35,12 @@ def normalise(input_key, note_prog):
         if(notes[0][i] == input_key):
             step_diff = const_key_val - notes[1][i]
 
-    for x in range(len(note_prog)):
+    for x in range(len(note_prog)):              
         note_prog[x] = note_prog[x] + step_diff
+        if(note_prog[x] < -1):
+            note_prog[x] = note_prog[x] + 12
+        if(note_prog[x] > 127):
+            note_prog[x] = note_prog[x] - 12
 
     return note_prog
 
