@@ -108,5 +108,6 @@ def train_model():
     print('train lstm---------------------------------------------')
     train(init_lstm_model(network_in, num_notes), network_in, network_out)
 
-train_model()
+if __name__ == '__main__':
+    train_model()
 
