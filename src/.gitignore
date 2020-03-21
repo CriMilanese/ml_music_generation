@@ -1,6 +1,0 @@
-__init__.py
-__pycache__/*
-__pycache__
-midi/*
-pickles/*
-LSTM/models/*
