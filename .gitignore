@@ -4,6 +4,7 @@ src/__pycache__
 src/midi/*
 src/pickles/*
 src/LSTM/models/*
+src/LSTM/__pycache__
 src/LSTM/weights/*
-src/dataset/
+src/dataset/*
 !src/dataset/Data.zip
