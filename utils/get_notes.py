@@ -1,7 +1,6 @@
 import mido
 from os import listdir, chdir, getcwd, path
 import sys
-from manage_pickles import savePk
 
 notes = []
 
@@ -10,7 +9,7 @@ def get_arr_notes(dir):
     if num.isdigit():
         num = int(num)
         dir0 = dir[:-1]
-    elif num == '/' 
+    elif num == '/':
         num = -1
         dir0 = dir
     for entry in listdir(dir0):
