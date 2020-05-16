@@ -55,9 +55,3 @@ All methods listed here handle the source/destination directory by themselves. M
 
 **__init__.py**
   >allows users to export this directory into PYTHONPATH env variable for usage of the methods outside this folder
-
-## plan B
-
-### song classifier
-
-In case the previous project would yield inconsistent results we decided to keep this option viable for further development, using data and research performed while working on the former

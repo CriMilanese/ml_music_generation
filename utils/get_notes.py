@@ -8,8 +8,6 @@ def get_arr_notes(dir):
     num = dir[-1:]
     if num.isdigit():
         num = int(num)
-    else:
-        num = -1
         dir0 = dir[:-1]
     elif num == '/':
         num = -1
