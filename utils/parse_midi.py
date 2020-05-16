@@ -12,17 +12,12 @@ from markov_chain import n_grams_frequency
 
 def check(file):
     mid = MidiFile(file)
-    #for track in mid.tracks:
     counter = 0
+    # it retrieves only the first track
     for msg in mid.tracks[0]:
         counter +=1
         if msg.type == 'time_signature':
             print(msg)
-            #print(meta)
-
-            #if msg.type == 'note_on':
-
-                #print(msg)
 
 def normalise(input_key, note_prog):
     notes = [['Ab', 'A', 'A#', 'Bb', 'B', 'C', 'C#', 'Db', 'D',

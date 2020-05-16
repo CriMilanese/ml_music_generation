@@ -68,7 +68,7 @@ def predict_next_note(input_note,option_dict,generated_notes):
 #given a sequence_length we want to generate a list of notes with size sequence_length by calling predict_next_note
 #function sequence_length times by updating the input of the predict_next_note function
 def predict_sequence(sequence_length,option_dict):
-    ##random generate a note
+    # randomly generate a note
     random_note = randint(23,100)
     while not bool(option_dict[random_note]):
         random_note = randint(23,100)
@@ -76,18 +76,17 @@ def predict_sequence(sequence_length,option_dict):
     input_note = random_note
     generated_notes.append(random_note)
     for n in range (sequence_length):
-        #print('this is the generate notes', generated_notes)
         generated_notes.append(predict_next_note(input_note,option_dict,generated_notes))
         input_note = generated_notes[len(generated_notes)-1]
     return generated_notes
 
-file_notes = []
 bigram_dict = {}
 trigram_dict = {}
 
 
 #make bigram and trigram from midi notes and calculate their frequency
 def n_grams_frequency(dt):
+    file_notes = []
     file_notes.append(dt)
     for notes in file_notes:
         for index,el in enumerate(notes):
@@ -111,5 +110,4 @@ def n_grams_frequency(dt):
 
 def init_markov_model(prob_df):
     option_dict = option_df(prob_df)
-    #predict_sequence(200,option_dict)
     create_midi(predict_sequence(200,option_dict))

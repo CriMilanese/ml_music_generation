@@ -7,3 +7,5 @@ src/LSTM/models/*
 src/LSTM/weights/*
 src/dataset/*
 !src/dataset/Data.zip
+docs/tex_report/*
+!docs/tex_report/simple.tex

@@ -9,7 +9,8 @@ def get_arr_notes(dir):
     num = dir[-1:]
     if num.isdigit():
         num = int(num)
-    else num = -1
+    else:
+        num = -1
         dir0 = dir[:-1]
         for entry in listdir(dir0):
             num -= 1

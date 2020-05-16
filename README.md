@@ -1,9 +1,15 @@
-# ML_project
-this repo is meant to contain all files for the project of machine learning, course code X_400154
+# Music generation with machine learning
+This project was meant to be the result of an assignment for the course of Machine Leaning at Vrije Unieversiteit - Amsterdam. It became a joint effort to experiment the power of machine learning for music composition, with satisfying results given its time constraints. It is
 
-## plan A
+It is composed of two parts, one exploiting basic probability theories and a second, more advanced, using modern recurrent neural networks, both with the goal of producing a sequence of notes by prepending an input of the same type
 
-### songs generator
+## Hidden Markov Model
+
+## Long Short Term Memory
+
+
+
+<!-- ### songs generator
 
 Will need to use deep learning. All viable options include **Tensorflow**, pretty complicated otherwise.
 Online resources and examples aim to produce single-instrument monophonic music. Two types of music format are used, namely **MIDI** and **abc notation** stored in a one-hot fashion to be used as vectors for the neural net. Datasets are mostly proprietary but there is a very complete one, ready to be scraped at [piano-e-competition](http://www.piano-e-competition.com).
@@ -29,7 +35,7 @@ In order to import any of the below methods from the same folder
 In order to import methods from files that are stored in different folders, this folder path must be added to PYTHONPATH environmental variable.
   `export PYTHONPATH="${PYTHONPATH}:/this/very/path"`
 Or for Windows users, check out the list of environmental variables under "system settings".
-All methods listed here handle the source/destination directory by themselves. Make sure to run them from "src/".
+All methods listed here handle the source/destination directory by themselves. Make sure to run them from "src/". -->
 
 **parse_midi.py**
 >`parse(_filename_)`
