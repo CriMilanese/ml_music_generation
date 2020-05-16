@@ -6,32 +6,23 @@ It is composed of two parts, one exploiting basic probability theories and a sec
 ### File structure:
 + `src/`
     _contains the whole python project source code_
+  + `dataset`
+    _includes a zip file with the midi files generated after key normalization_
+  + `HMM`
+    _contains the main functions for the generation of songs with the Hidden Markov Model_
+  + `LSTM`
+  _contains the main functions for the generation of songs with the Recurrent Neural Network_
+  + `midi/`
+  _all MIDI sample files to be parsed are stored here_
   + `pickles/`
     _includes all python data structures in a handy pickle format_
-  + `midi/`
-    _all MIDI sample files to be parsed are stored here_
+  + `stats/`
+    _contains a script to perform basic statistical analysis on the midi files produced after normalization_
 + `docs/`
   _the full article describing the experiment in-depth and the tex file, where the article came from, is there as an example to look at._
++ `utils`
+_helpers for most of the operations done through the experiment, they might find application elsewhere, take a look at the API section._
 
-for more information take a look at the resulting article in the **docs** folder, which is compiled using latex environment
+for more information take a look at the resulting article in the **docs** folder, which is compiled using latex environment.
 
-### API
-
-**parse_midi.py**
->`parse(_filename_)`
-  performs midi file parsing given a filename and *returns* a dictionary with all notes played in a track as keys, their  following notes and occurrence as values, stored into an array.
-
-**managePickles.py**
-  >`loadPk(_filename_)`
-  pass a pickle filename to the functions in order to have the data structure returned.
-  >`savePk(_data_, _filename_)`
-  pass the data structure and a name to save the file with.
-
-**notes_freq.py**
-  >An example of how to use *managePickles.py* to retrieve one of the data structures, the printed result contains a dictionary with note to frequency key-value pairs.
-
-**main.py**
-  >performs parsing for all .MID files from the "midi/" folder and save their content as pickle files into "pickles/".
-
-**__init__.py**
-  >allows users to export this directory into PYTHONPATH env variable for usage of the methods outside this folder
+We got the models to produce [two songs](https://soundcloud.com/user-748655368), which were then the subject of a [survey]() to find out which of the result people liked the most.

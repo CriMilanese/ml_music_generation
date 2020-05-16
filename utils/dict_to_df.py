@@ -1,4 +1,4 @@
-# this file contains 
+# this file contains
 
 from parse_midi import parse
 import pandas as pd
@@ -12,7 +12,7 @@ def dict_to_dataframe(input_dict):
         df.loc[key, : ] = temp_df.loc[:,key]
     return df
 
-def calc_probability(freq_df):
+def calc_probability(freq_df, sum):
     prob_df = pd.DataFrame(np.zeros((128,128)), dtype= float)
     for index, row in freq_df.iterrows():
         row_sum = row.sum()

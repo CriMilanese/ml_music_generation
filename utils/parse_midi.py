@@ -66,13 +66,8 @@ def parse(file, key):
                 my_dict[n][notes[indx+1]] += 1
 
     for note in my_dict.keys():
-        #print(note , ': ')
         counter= 0
         for foll in my_dict[note]:
-            #if foll != 0.0:
-                #print(foll, 'for key note ',note,'at counter',counter)
             counter += 1
     del notes
     return my_dict
-#parse(argv[1], argv[2])
-#check(argv[1])

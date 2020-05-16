@@ -4,6 +4,8 @@ src/midi/*
 src/pickles/*
 src/LSTM/models/*
 src/LSTM/weights/*
+src/LSTM/generated_MIDI/*
+src/HMM/generated_MIDI/*
 src/dataset/*
 !src/dataset/Data.zip
 docs/tex_report/*

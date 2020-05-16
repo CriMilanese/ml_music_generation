@@ -3,12 +3,12 @@
 
 ###############################################################
 # to make use of this tool simply use the import in your script
-# make sure to be in the 'src' directory
 # from managePickles import loadPk
 ###############################################################
 
 import pickle
 
+# load from caller local directory
 def loadPk(filename):
     my_list = ''
     with open('{}.pickle'.format(filename), 'rb') as handle:
@@ -16,6 +16,7 @@ def loadPk(filename):
     handle.close()
     return my_list
 
+#saves in caller local directory
 def savePk(data, filename):
     with open('{}.pickle'.format(filename), 'wb') as handle:
         pickle.dump(data, handle, protocol=pickle.HIGHEST_PROTOCOL)
