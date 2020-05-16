@@ -3,7 +3,7 @@ This project was meant to be the result of an assignment for the course of Machi
 
 It is composed of two parts, one exploiting basic probability theories and a second, more advanced, using modern recurrent neural networks, both with the goal of producing a sequence of notes by prepending an input of the same type.
 
-##### File structure:
+### File structure:
 + src/ \n
 _contains the whole python project source code_
 + pickles/ \n
@@ -15,7 +15,7 @@ _all you need to have is the L<sub>A</sub>T<sub>E</sub>X package installed to be
 
 for more information take a look at the resulting article in the **docs** folder, which is compiled using latex environment
 
-##### API
+### API
 
 **parse_midi.py**
 >`parse(_filename_)`
