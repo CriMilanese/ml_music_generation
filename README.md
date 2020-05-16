@@ -4,13 +4,13 @@ This project was meant to be the result of an assignment for the course of Machi
 It is composed of two parts, one exploiting basic probability theories and a second, more advanced, using modern recurrent neural networks, both with the goal of producing a sequence of notes by prepending an input of the same type.
 
 ### File structure:
-+ src/ \n
++ `src/`
 _contains the whole python project source code_
-+ pickles/ \n
++ `pickles/`
 _includes all python data structures in a handy pickle format_
-+ midi/ \n
++ `midi/`
 _all MIDI sample files to be parsed are stored here_
-+ tex_report/ \n
++ `tex_report/`
 _all you need to have is the L<sub>A</sub>T<sub>E</sub>X package installed to be able to compile .tex into PDF, but a simple text editor will be enough to edit it_
 
 for more information take a look at the resulting article in the **docs** folder, which is compiled using latex environment
