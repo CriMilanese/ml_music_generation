@@ -5,13 +5,13 @@ It is composed of two parts, one exploiting basic probability theories and a sec
 
 ### File structure:
 + `src/`
-_contains the whole python project source code_
+  _contains the whole python project source code_
 + `pickles/`
-_includes all python data structures in a handy pickle format_
+  _includes all python data structures in a handy pickle format_
 + `midi/`
-_all MIDI sample files to be parsed are stored here_
+  _all MIDI sample files to be parsed are stored here_
 + `tex_report/`
-_all you need to have is the L<sub>A</sub>T<sub>E</sub>X package installed to be able to compile .tex into PDF, but a simple text editor will be enough to edit it_
+  _all you need to have is the L<sub>A</sub>T<sub>E</sub>X package installed to be able to compile .tex into PDF, but a simple text editor will be enough to edit it_
 
 for more information take a look at the resulting article in the **docs** folder, which is compiled using latex environment
 
